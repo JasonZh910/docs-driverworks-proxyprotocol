@@ -44,9 +44,9 @@ jobs:
         
     - name: Sync with upstream (allow unrelated histories)
       run: |
-        git checkout main  # 确保切换到目标分支 main
-        git pull upstream main --allow-unrelated-histories  # 强制合并不相关的历史
+        git checkout master  # 确保切换到目标分支 main
+        git pull upstream master --allow-unrelated-histories  # 强制合并不相关的历史
 
     - name: Check for changes and push
       run: |
-        git diff --quiet upstream/main main && git push origin main || echo "No changes to sync"
+        git diff --quiet upstream/master master && git push origin master || echo "No changes to sync"
